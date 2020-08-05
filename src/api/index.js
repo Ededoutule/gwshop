@@ -1,10 +1,12 @@
 import ajax from './ajax'
 
 const BASE_URL = '/api'
-
+    //根据经纬度获取位置详情
 const reqAddress = (geohash) => ajax(BASE_URL + `/position/${geohash}`)
+    //获取食品种类
 const reqFoodTypes = () => ajax(BASE_URL + '/index_category')
-const reqShops = (longitude, latitude) => ajax('/shops', {
+    //根据经纬度获取商铺列表
+const reqShops = (longitude, latitude) => ajax(BASE_URL + '/shops', {
         longitude,
         latitude
     })
