@@ -3,7 +3,10 @@ import {
     RECEIVE_FOODTYPES,
     RECEIVE_SHOPS,
     RECEIVE_USER_INFO,
-    RESET_USER_INFO
+    RESET_USER_INFO,
+    RECEIVE_GOODS,
+    RECEIVE_RATINGS,
+    RECEIVE_INFO
 } from './mutation-type';
 
 import {
@@ -11,7 +14,10 @@ import {
     reqFoodTypes,
     reqShops,
     reqUserInfo,
-    reqLogout
+    reqLogout,
+    reqShopInfo,
+    reqShopRatings,
+    reqShopGoods
 } from '../api'
 
 export default {
@@ -55,11 +61,35 @@ export default {
             commit(RECEIVE_USER_INFO, { userInfo })
         }
     },
+    //登出
     async Logout({ commit }) {
         const result = await reqLogout()
         if (result.code === 0) {
-
             commit(RESET_USER_INFO)
+        }
+    },
+    // 异步获取商家信息
+    async getShopInfo({ commit }) {
+        const result = await reqShopInfo()
+        if (result.code === 0) {
+            const info = result.data
+            commit(RECEIVE_INFO, { info })
+        }
+    },
+    // 异步获取商家评价列表
+    async getShopRatings({ commit }) {
+        const result = await reqShopRatings()
+        if (result.code === 0) {
+            const ratings = result.data
+            commit(RECEIVE_RATINGS, { ratings })
+        }
+    },
+    // 异步获取商家商品列表
+    async getShopGoods({ commit }) {
+        const result = await reqShopGoods()
+        if (result.code === 0) {
+            const goods = result.data
+            commit(RECEIVE_GOODS, { goods })
         }
     }
 }

@@ -64,7 +64,7 @@ export default {
         
     },
     watch: {
-      foodTypes() { // categorys数组中有数据了, 在异步更新界面之前执行
+      foodTypes() { // foodTypes数组中有数据了, 在异步更新界面之前执行
         // 使用setTimeout可以实现效果, 但不是太好
         /*setTimeout(() => {
           // 创建一个Swiper实例对象, 来实现轮播
