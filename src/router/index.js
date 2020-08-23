@@ -75,7 +75,7 @@ const routes = [{
             showFooter: false
         },
         children: [{
-            path: '',
+            path: '/',
             redirect: '/shop/goods'
         }, {
             path: '/shop/goods',
@@ -94,7 +94,7 @@ const routes = [{
 ]
 
 const router = new VueRouter({
-    mode: 'history',
+    mode: 'hash',
     base: process.env.BASE_URL,
     routes
 })
