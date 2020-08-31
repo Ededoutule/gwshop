@@ -26,10 +26,9 @@
               <li
                 class="food-item bottom-border-1px"
                 v-for="(food, index) in good.foods"
-                :key="index"
-                @click="showFood(food)"
+                :key="index" 
               >
-                <div class="icon">
+                <div class="icon" @click="showFood(food)">
                   <img width="57" height="57" :src="food.icon" />
                 </div>
                 <div class="content">
@@ -44,7 +43,7 @@
                     <span class="old" v-if="food.oldPrice">￥{{food.oldPrice}}</span>
                   </div>
                   <div class="cartcontrol-wrapper">
-                    <!-- <CartControl :food="food" /> -->
+                    <CartControl :food="food" />
                   </div>
                 </div>
               </li>
@@ -52,13 +51,16 @@
           </li>
         </ul>
       </div>
-      <!-- <ShopCart /> -->
+      <ShopCart />
     </div>
-    <!-- <Food :food="food" ref="food" /> -->
+    <Food :food="food" ref="food" />
     </div>
 </template>
 
 <script>
+import CartControl from '../../../components/CartControl/CartControl'
+import Food from '../../../components/Food/Food'
+import ShopCart from '../../../components/ShopCart/ShopCart'
 import BScroll from 'better-scroll'
 import {mapState} from 'vuex'
 export default {
@@ -66,6 +68,7 @@ export default {
         return {
             scrollY: 0,
             tops: [],
+            food: {}
         }
     },
     mounted() {
@@ -137,7 +140,7 @@ export default {
         this.tops = tops
         console.log([...lis])
       },
-        clickMenuItem(index) {
+      clickMenuItem(index) {
         console.log(index)
         // 使用右侧列表滑动到对应的位置
 
@@ -148,6 +151,19 @@ export default {
         // 平滑滑动右侧列表
         this.foodsScroll.scrollTo(0, -scrollY, 300)
       },
+      //
+      showFood(food) {
+        //设置food
+        this.food = food
+        console.log(food)
+        //显示food
+        this.$refs.food.toggleShow()
+      }
+    },
+    components: {
+      CartControl,
+      Food,
+      ShopCart
     }
 };
 </script>

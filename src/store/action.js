@@ -6,7 +6,10 @@ import {
     RESET_USER_INFO,
     RECEIVE_GOODS,
     RECEIVE_RATINGS,
-    RECEIVE_INFO
+    RECEIVE_INFO,
+    INCREMENT_FOOD_COUNT,
+    DECREMENT_FOOD_COUNT,
+    CLEAR_CART
 } from './mutation-type';
 
 import {
@@ -93,5 +96,15 @@ export default {
                 // 数据更新了, 通知一下组件
             cb && cb()
         }
+    },
+    updateFoodCount({ commit }, { isAdd, food }) {
+        if (isAdd) {
+            commit(INCREMENT_FOOD_COUNT, { food })
+        } else {
+            commit(DECREMENT_FOOD_COUNT, { food })
+        }
+    },
+    clearCart({ commit }) {
+        commit(CLEAR_CART)
     }
 }

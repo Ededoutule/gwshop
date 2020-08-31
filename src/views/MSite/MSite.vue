@@ -52,6 +52,7 @@ import ShopList from "../../components/ShopList/ShopList";
 import { mapState } from 'vuex';
 // import { nextTick } from 'vue/types/umd';
 export default {
+    name: 'MSite',
     data() {
       return {
       baseImageUrl: 'https://fuss10.elemecdn.com'
