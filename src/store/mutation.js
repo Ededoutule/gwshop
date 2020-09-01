@@ -10,7 +10,8 @@ import {
     RECEIVE_INFO,
     INCREMENT_FOOD_COUNT,
     DECREMENT_FOOD_COUNT,
-    CLEAR_CART
+    CLEAR_CART,
+    RECEIVE_SEARCH_SHOPS
 } from './mutation-type';
 
 export default {
@@ -61,5 +62,8 @@ export default {
             food.count = 0
         });
         state.cartFoods = []
+    },
+    [RECEIVE_SEARCH_SHOPS](state, { searchShops }) {
+        state.searchShops = searchShops
     }
 }

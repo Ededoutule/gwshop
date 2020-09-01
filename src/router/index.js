@@ -14,12 +14,19 @@ const Search = () =>
 const Login = () =>
     import ('../views/Login/Login.vue')
 
+const Shop = () =>
+    import ('../views/Shop/Shop.vue')
+const ShopGoods = () =>
+    import ('../views/Shop/ShopGoods/ShopGoods.vue')
+const ShopRatings = () =>
+    import ('../views/Shop/ShopRatings/ShopRatings.vue')
+const ShopInfo = () =>
+    import ('../views/Shop/ShopInfo/ShopInfo.vue')
 
-
-import Shop from '../views/Shop/Shop.vue';
-import ShopGoods from '../views/Shop/ShopGoods/ShopGoods.vue';
-import ShopRatings from '../views/Shop/ShopRatings/ShopRatings.vue';
-import ShopInfo from '../views/Shop/ShopInfo/ShopInfo.vue';
+// import Shop from '../views/Shop/Shop.vue';
+// import ShopGoods from '../views/Shop/ShopGoods/ShopGoods.vue';
+// import ShopRatings from '../views/Shop/ShopRatings/ShopRatings.vue';
+// import ShopInfo from '../views/Shop/ShopInfo/ShopInfo.vue';
 const routes = [{
         path: '/',
         name: 'MSite',

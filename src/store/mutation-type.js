@@ -16,7 +16,7 @@ const INCREMENT_FOOD_COUNT = "increment_food_count" //增加food中的count
 const DECREMENT_FOOD_COUNT = "decrement_food_count" //减少food中的count
 
 const CLEAR_CART = 'clear_cart'
-
+const RECEIVE_SEARCH_SHOPS = 'receive_search_shops' // 接收搜索的商家数组
 export {
     RECEIVE_ADDRESS,
     RECEIVE_FOODTYPES,
@@ -28,5 +28,6 @@ export {
     RECEIVE_INFO,
     INCREMENT_FOOD_COUNT,
     DECREMENT_FOOD_COUNT,
-    CLEAR_CART
+    CLEAR_CART,
+    RECEIVE_SEARCH_SHOPS
 }
